@@ -1,26 +1,79 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #1c1f1d;
+  --sage: #586a57;
+  --sage-dark: #3a4a38;
+  --cream: #f4f2ec;
+  --cream-deep: #e9e6dc;
+  --muted: #6b7069;
+  --whatsapp: #25d366;
+}
+
+.dark {
+  --background: #14171a;
+  --foreground: #eceae4;
+  --sage: #6d8a6d;
+  --sage-dark: #8a9a8a;
+  --cream: #1c2120;
+  --cream-deep: #242b29;
+  --muted: #98a298;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-sage: var(--sage);
+  --color-sage-dark: var(--sage-dark);
+  --color-cream: var(--cream);
+  --color-cream-deep: var(--cream-deep);
+  --color-muted: var(--muted);
+  --color-whatsapp: var(--whatsapp);
+  --font-sans: var(--font-sans, "Manrope", ui-sans-serif, system-ui, sans-serif);
+  --font-display: var(--font-display, "DM Serif Display", serif);
+  --shadow-lift: 0 18px 40px -18px rgb(28 31 29 / 0.35);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Blog rich text content */
+.prose-richtext {
+  line-height: 1.8;
+  font-size: 1rem;
+}
+.prose-richtext h2 {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 400;
+  margin: 2.5rem 0 1rem;
+  color: var(--foreground);
+}
+.prose-richtext p {
+  margin: 1rem 0;
+  color: var(--foreground);
+  opacity: 0.9;
+}
+.prose-richtext blockquote {
+  border-left: 3px solid var(--sage);
+  padding-left: 1rem;
+  font-style: italic;
+  margin: 1.5rem 0;
+  color: var(--muted);
+}
+.prose-richtext ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin: 1rem 0;
+}
+.prose-richtext li {
+  margin: 0.25rem 0;
 }
