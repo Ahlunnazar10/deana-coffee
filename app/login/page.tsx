@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { Coffee, LogIn, UserPlus } from "lucide-react";
+import { LogIn, UserPlus } from "lucide-react";
 import { useAuth } from "../../lib/auth";
 import { cn, btn } from "../../components/ui";
 
@@ -43,14 +43,16 @@ export default function LoginPage() {
     "w-full rounded-xl border border-cream-deep bg-background px-4 py-3 text-sm outline-none transition-colors focus:border-sage";
 
   return (
-    <div className="mx-auto flex min-h-svh max-w-md flex-col justify-center px-6 py-16">
+    <div className="mx-auto flex min-h-svh max-w-md flex-col justify-center px-6 py-16 pt-32">
       <Link
         href="/"
         className="mb-8 flex items-center justify-center gap-2.5"
       >
-        <span className="flex h-11 w-11 items-center justify-center rounded-full bg-sage text-white">
-          <Coffee className="h-5 w-5" />
-        </span>
+        <img
+          src="/images/logos/deana-logo-40x40.png"
+          alt="Deana Coffee"
+          className="h-11 w-11 rounded-full object-cover"
+        />
         <span className="font-display text-2xl">Deana</span>
       </Link>
 

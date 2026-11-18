@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
-  Coffee,
   Inbox,
   LayoutDashboard,
   LogOut,
@@ -24,7 +23,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
   if (!checked || !user || user.role !== "admin") {
     return (
-      <div className="flex min-h-svh items-center justify-center">
+      <div className="flex min-h-svh items-center justify-center pt-18">
         <div className="text-center">
           <p className="mb-4 text-lg text-muted">Area khusus admin.</p>
           <Link
@@ -39,13 +38,15 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   }
 
   return (
-    <div className="mx-auto flex max-w-7xl gap-8 px-6 py-12">
+    <div className="mx-auto flex max-w-7xl gap-8 px-6 pt-32 pb-12">
       <aside className="w-56 shrink-0">
         <div className="sticky top-24 flex flex-col gap-2">
           <Link href="/" className="mb-4 flex items-center gap-2 px-2">
-            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-sage text-white">
-              <Coffee className="h-4 w-4" />
-            </span>
+            <img
+              src="/images/logos/deana-logo-40x40.png"
+              alt="Deana Coffee"
+              className="h-9 w-9 rounded-full object-cover"
+            />
             <span className="font-display">Deana Admin</span>
           </Link>
           {tabs.map((t) => (

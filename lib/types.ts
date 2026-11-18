@@ -55,3 +55,22 @@ export type User = {
   whatsapp: string;
   verified: boolean;
 };
+
+export type HarvestEntry = {
+  region: string;
+  mainCrop: string;
+  flyCrop: string;
+};
+
+export type QCStep = {
+  n: string;
+  title: string;
+  desc: string;
+  icon: string;
+};
+
+export type ComplianceDoc = {
+  name: string;
+  desc: string;
+  icon: string;
+};
